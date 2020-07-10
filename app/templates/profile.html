@@ -1,0 +1,53 @@
+{% extends 'user_navigation.html' %}
+{% load static %}
+{% block body %}
+
+<div class="container text-center mt-5" >
+    <h2>View Profile</h2>
+<hr>
+    <div class="row">
+        <div class="col-md-6">
+            <strong>Full Name:</strong> 
+        </div>
+        <div class="col-md-6">
+        {{data.user.first_name}} {{data.user.last_name}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <strong>Email:</strong>
+
+        </div>
+        <div class="col-md-6">
+        {{data.user.username}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <strong>Contact:</strong>
+    
+        </div>
+        <div class="col-md-6">
+        {{data.contact}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <strong>Branch:</strong>
+    
+        </div>
+        <div class="col-md-6">
+        {{data.branch}}
+        </div>
+    </div>
+
+    <a href="{% url 'edit_profile' %}" class="btn btn-primary mt-5">Edit Profile</a>
+
+</div>
+
+
+
+{% endblock %}

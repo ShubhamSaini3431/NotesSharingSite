@@ -1,0 +1,41 @@
+{% extends 'user_navigation.html' %}
+{% load static %}
+{% block body %}
+
+<div class="container text-center mt-2" style="font-family: Monotype Corsiva">
+    <h2>All Notes</h2>
+</div>
+<div class="container mt-3">
+    <table class="table table-bordered">
+<thead>
+    <tr>
+        <th>Sr.No</th>
+        <th>Uploaded By</th>
+        <th>Uploading Date</th>
+        <th>Branch</th>
+        <th>Subject</th>
+        <th>Download Notes</th>
+        <th>File Type</th>
+        <th>Description</th>
+    </tr>
+</thead>
+    
+    <tbody>
+        {% for i in notes %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{i.user.first_name}} {{i.user.last_name}}</td>
+            <td>{{i.uploading_date}}</td>
+            <td>{{i.branch}}</td>
+            <td>{{i.subject}}</td>
+            <td><a href="{{i.notesfile.url}}"download>{{i.notesfile}}</a></td>
+            <td>{{i.filetype}}</td>
+            <td>{{i.description}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+
+{% endblock %}

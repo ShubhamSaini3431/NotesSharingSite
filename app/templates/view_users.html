@@ -1,0 +1,40 @@
+{% extends 'admin_navigation.html' %}
+{% block body %}
+
+<div class="container text-center mt-3" style="font-family: cursive">
+    <h2>View All Users</h2>
+</div>
+<div class="container mt-3">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Sr.No</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Branch</th>
+                <th>Contact</th>
+                <th>Role</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for i in users %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{i.user.first_name}} {{i.user.last_name}}</td>
+                <td>{{i.user.username}}</td>
+                <td>{{i.branch}}</td>
+                <td>{{i.contact}}</td>
+                <td>{{i.role}}</td>
+                <td><a class="btn btn-danger" href="{% url 'delete_users' i.id %}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

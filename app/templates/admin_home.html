@@ -1,0 +1,75 @@
+{% extends 'admin_navigation.html' %}
+{% load static %}
+{% block body %}
+
+<style>
+    .container1 {
+        background-color: rgb(224, 203, 230);
+        border-radius: 8px;
+    }
+
+    .mydiv:hover{
+        transform: translateY(-10px);
+    }
+</style>
+
+
+
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-3 text-center mydiv">
+            <div class="container1">
+                <h2 class="text-primary">{{p}}</h2>
+                <a href="{% url 'pending_notes' %}" ><h4 class="text-dark">Pending Notes</h4></a>
+
+            </div>
+
+        </div>
+
+        <div class="col-sm-3 text-center mydiv">
+            <div class="container1">
+                <h2 class="text-primary">{{a}}</h2>
+                <a href="{% url 'accepted_notes' %}">
+                    <h4 class="text-dark">Accepted Notes</h4>
+                </a>
+        
+            </div>
+        
+        </div>
+
+        <div class="col-sm-3 text-center mydiv">
+            <div class="container1">
+                <h2 class="text-primary">{{r}}</h2>
+                <a href="{% url 'rejected_notes' %}">
+                    <h4 class="text-dark">Rejected Notes</h4>
+                </a>
+        
+            </div>
+        
+        </div>
+
+        <div class="col-sm-3 text-center mydiv">
+            <div class="container1">
+                <h2 class="text-primary">{{all}}</h2>
+                <a href="{% url 'allnotes_admin' %}">
+                    <h4 class="text-dark">All Notes</h4>
+                </a>
+        
+            </div>
+        
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer class="container text-center" style="margin-top: 25%;">
+    <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> All Rights Reserved</p>
+
+</footer>
+
+
+{% endblock %}

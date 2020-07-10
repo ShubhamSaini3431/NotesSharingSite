@@ -1,0 +1,56 @@
+{% extends 'user_navigation.html' %}
+{% load static %}
+{% block body %}
+
+<div class="container" style="margin-left: 30%;">
+    <div class="col-sm-6">
+        <h2 class="text-center mt-4" style="font-family: cursive;">Upload Notes</h2>
+        <hr>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <label>Branch</label>
+            <select class="form-control" name="branch">
+                <option value="Computer Science">Computer Science</option>
+                <option value="Mechanical">Mechanical</option>
+                <option value="Civil">Civil </option>
+                <option value="Electrical">Electrical</option>
+            </select>
+
+            <label>Subject</label>
+            <input type="text" name="subject" class="form-control" placeholder="Enter Subject">
+            <label>Notes File</label>
+            <input type="file" name="notesfile" class="form-control">
+            <label>File Type</label>
+            <select class="form-control" name="filetype">
+                <option value="pdf">pdf</option>
+                <option value="doc">doc</option>
+            </select>
+            <label>Description</label>
+            <input type="text" name="desc" class="form-control" placeholder="Enter Description">
+
+            <input type="submit" class="btn btn-info mt-3" value="Submit">
+        </form>
+        <br><br><br>
+    </div>
+
+
+
+
+
+
+</form>
+
+{% ifequal error "no" %}
+<script>
+    alert('Notes Uploaded Successfully');
+    window.location = ('{% url 'viewmy_notes' %}');
+</script>
+{% endifequal %}
+
+{% ifequal error "yes" %}
+<script>
+    alert('Invalid Data, try again');
+</script>
+{% endifequal %}
+{% endblock %}

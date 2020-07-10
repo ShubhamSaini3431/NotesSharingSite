@@ -1,0 +1,62 @@
+{% extends 'navigation.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Sharing Site</title>
+</head>
+<body>
+    
+    <div class="container" style="margin-left: 30%;">
+        <div class="col-sm-6">
+            <h2 class="text-center mt-4" style="font-family: cursive;">Register Here !</h2>
+            <hr>
+            <form action="#" method="POST">
+                {% csrf_token %}
+                <label>First Name</label>
+                <input type="text" name="first_name" class="form-control" placeholder="Enter First Name">
+                <label>Last Name</label>
+                <input type="text" name="last_name" class="form-control" placeholder="Enter Last Name">
+                <label>Contact No.</label>
+                <input type="number" name="contact" class="form-control" placeholder="Enter Contact No.">
+                <label>Email</label>
+                <input type="email" name="e_mail" class="form-control" placeholder="Enter Email Id">
+                <label>Password</label>
+                <input type="password" name="password" class="form-control" placeholder="Enter Password">
+                <label>Branch</label>
+                <select class="form-control" name="branch">
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Mechanical">Mechanical</option>
+                    <option value="Civil">Civil </option>
+                    <option value="Electrical">Electrical</option>
+                </select>
+                <label>Role : Are you ?</label>
+                <select class="form-control" name="role">
+                    <option value="Student">Student</option>
+                    <option value="Faculty">Faculty</option>
+                </select>
+                <input type="submit" class="btn btn-info mt-3" value="Submit">
+            </form>
+            <br><br><br>
+        </div>
+</body>
+</html>
+
+{% ifequal error "no" %}
+<script>
+    alert('SignUp Successfully');
+    window.location = ('{% url 'user_login' %}');
+</script>
+{% endifequal %}
+
+{% ifequal error "yes" %}
+<script>
+    alert('Something went wrong, try again');
+</script>
+{% endifequal %}
+
+
+
+{% endblock %}

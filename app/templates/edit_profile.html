@@ -1,0 +1,43 @@
+{% extends 'user_navigation.html' %}
+{% block body %}
+
+<div class="container" style="margin-left: 30%;">
+    <div class="col-sm-6">
+        <h2 class="text-center mt-4" style="font-family: cursive;">Edit Profile</h2>
+        <hr>
+        <form action="#" method="POST">
+            {% csrf_token %}
+            <label>First Name</label>
+            <input type="text" name="fname" class="form-control" value="{{data.user.first_name}}">
+            <label>Last Name</label>    
+            <input type="text" name="lname" class="form-control" value="{{data.user.last_name}}">
+            <label>Contact No.</label>
+            <input type="number" name="contact" class="form-control" value="{{data.contact}}">
+            <label>Email</label>
+            <input type="email" name="uname" class="form-control" value="{{data.user.username}}">
+            <label>Branch</label>
+            <select  class="form-control" name="branch">
+                <option value="Computer Science">Computer Science</option>
+                <option value="Mechanical">Mechanical</option>
+                <option value="Civil">Civil </option>
+                <option value="Electrical">Electrical</option>
+            </select>
+            <input type="submit" class="btn btn-info mt-3" value="Update">
+        </form>
+        <br><br><br>
+    </div>
+
+{% ifequal error "no" %}
+<script>
+    alert('Updated Successfully');
+    window.location = ('{% url 'profile' %}');
+</script>
+{% endifequal %}
+
+{% ifequal error "yes" %}
+<script>
+    alert('Something went wrong, try again');
+</script>
+{% endifequal %}
+
+{% endblock %}

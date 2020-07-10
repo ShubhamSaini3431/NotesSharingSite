@@ -1,0 +1,43 @@
+{% extends 'admin_home.html' %}
+{% block body %}
+
+<div class="container text-center mt-5">
+
+    <h2>Change Status</h2>
+
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <strong>Notes Id:</strong>
+        </div>
+        <div class="col-md-6">
+           
+
+            <h2>{{stat.id}}</h2>
+            
+        </div>
+    </div>
+
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <strong>Change Status:</strong>
+        </div>
+        <div class="col-md-6">
+
+
+    
+                <select class="form-control" name="final_stat">
+                    <option value="{{stat.status}}">{{stat.status}}</option>
+                    <option value="Accept">Accept</option>
+                    <option value="Reject">Reject</option>
+                </select>
+        <a href="{% url 'allnotes_admin' %}" class="btn btn-danger mt-5">Submit</a>
+    </form>
+    </div>
+</div>
+</div>
+
+{% endblock %}
