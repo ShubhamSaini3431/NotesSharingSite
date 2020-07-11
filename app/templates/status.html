@@ -29,12 +29,11 @@
 
 
     
-                <select class="form-control" name="final_stat">
-                    <option value="{{stat.status}}">{{stat.status}}</option>
-                    <option value="Accept">Accept</option>
-                    <option value="Reject">Reject</option>
+                <select class="form-control" name="status">
+                    <option value="accept">accept</option>
+                    <option value="reject">reject</option>
                 </select>
-        <a href="{% url 'allnotes_admin' %}" class="btn btn-danger mt-5">Submit</a>
+        <input type="submit" class="btn btn-success" value="Submit">
     </form>
     </div>
 </div>

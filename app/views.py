@@ -267,13 +267,13 @@ def status(request,pid):
     if not request.user.is_staff:
         return redirect('login_admin')
     
-    stat = Notes.objects.get(id = pid)
+    stat = Notes.objects.get(id=pid)
     if request.method == 'POST':
-        s = request.POST['final_stat']
+        s = request.POST['status']
         try:
-            up = Notes(status=s)
-            up.save()
-            return redirect('allnotes_admin')
+           stat.status = s
+           stat.save()
+           return redirect('allnotes_admin')
         except:
             return redirect('status')
     
