@@ -15,28 +15,35 @@
 </head>
 <body>
 
-    <h1 style="padding: 3%;"><span style="color: blue;">Study Notes</span><span style="color: chartreuse;">Notes Sharing Site</span></h1>
+    <h1 style="padding: 2%;"><span style="color: blue;">Notesify:</span><span style="color: rgb(255, 0, 0);">A Notes Sharing Site</span></h1>
 
-    <nav class="navbar navbar-expand-sm justify-content-center" style="background-color: rgb(219, 128, 53);">
+    <nav class="navbar sticky-top navbar-expand-sm justify-content-center navbar-fixed-top" style="background-color: rgb(216, 105, 61);">
         <ul class="navbar-nav">
-            <li class="navbar-item">
-                <a  class="nav-link" href="{% url 'index' %}">HOME</a>
-            </li>
-            <li class="navbar-item">
-                <a class="nav-link" href="{% url 'about' %}">About</a>
-            </li>
-            <li class="navbar-item">
-                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-            </li>
-            <li class="navbar-item">
-                <a class="nav-link" href="{% url 'user_login' %}">Login</a>
-            </li>
-            <li class="navbar-item">
-                <a class="nav-link" href="{% url 'login_admin' %}">Admin Login</a>
-            </li>
-
-        </ul>
+                <li class="navbar-item">
+                    <a  class="nav-link" href="{% url 'index' %}">HOME</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="nav-link" href="{% url 'about' %}">About</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="nav-link" href="{% url 'user_signup' %}">Signup</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="nav-link" href="{% url 'user_login' %}">Login</a>
+                </li>
+                
+                <li class="navbar-item ml-5">
+                    <a class="nav-link" href="{% url 'login_admin' %}">Admin Login</a>
+                </li>
+            </ul>
+        </div>
     </nav>
+
+
+
 </body>
 </html>
 {% block body %}

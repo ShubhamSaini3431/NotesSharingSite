@@ -13,12 +13,11 @@
     width: 100%;
     height: 470px;
     background-color: lightgray;
-    border: 1px solid brown;
+    border: 1px solid rgb(214, 189, 189);
     opacity: 0.6;    
 }
 
 .transparent-box p {
-    margin-top: 10%;
     font-weight: bold;
     font-size: 60px;
     font-family: 'Monotype Corsiva';
@@ -31,7 +30,7 @@
     width: 150px;
     border-radius: 90px 90px 0px 0px;
     margin: 0px;
-    background-color: rgb(28, 182, 28);
+    background-color: rgb(209, 211, 105);
 }
 
 .halfcirclebottom{
@@ -39,7 +38,7 @@
     width: 150px;
     border-radius: 0px 0px 90px 90px;
     margin: 0px;
-    background-color: rgb(28, 56, 182);
+    background-color: rgb(128, 219, 92);
 }
 
 .box1 p{
