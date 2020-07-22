@@ -1,5 +1,6 @@
 .nav-link {
     color: black;
+    font-weight: 500;
 }
 
 .nav-link:hover {
@@ -30,7 +31,7 @@
     width: 150px;
     border-radius: 90px 90px 0px 0px;
     margin: 0px;
-    background-color: rgb(209, 211, 105);
+    background-color: rgb(79, 104, 216);
 }
 
 .halfcirclebottom{
@@ -38,7 +39,7 @@
     width: 150px;
     border-radius: 0px 0px 90px 90px;
     margin: 0px;
-    background-color: rgb(128, 219, 92);
+    background-color: rgb(113, 240, 63);
 }
 
 .box1 p{
