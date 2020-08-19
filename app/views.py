@@ -61,10 +61,11 @@ def user_signup(request):
         p= request.POST['password']
         b = request.POST['branch']
         r = request.POST['role']
+        q = request.FILES['photo']
 
         try:
             user = User.objects.create_user(username = e,password = p,first_name = f,last_name = l)
-            Signup.objects.create(user=user,contact = c, branch =b,role =r)
+            Signup.objects.create(user=user,contact = c, branch =b,role =r,photo =q)
             error = "no"
         except:
             error = "yes"
